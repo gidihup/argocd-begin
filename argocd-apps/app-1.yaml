@@ -7,7 +7,6 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   source:
-    path:
     repoURL: https://github.com/gidihup/argocd-begin.git
     targetRevision: HEAD
   destination:
