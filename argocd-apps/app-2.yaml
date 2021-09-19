@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app-2
+  namespace: argocd-app
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  source:
+    path: argocd/apps/app-2
+    repoURL: https://github.com/gidihup/argocd-begin.git
+    targetRevision: HEAD
+  destination:
+    namespace: argocd-app
+    server: https://kubernetes.default.svc
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+  
